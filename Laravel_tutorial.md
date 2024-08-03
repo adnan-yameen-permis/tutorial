@@ -218,6 +218,9 @@ $article = new Article();
 $article->title = ‘title’;
 $article->body = ‘body’;
 $article->save();
+
+$article::select('column1','column2')->get();
+$article::query()->select('column1','column2')->get(); // used for complex query
 ```
 
 
