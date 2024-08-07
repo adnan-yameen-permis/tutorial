@@ -219,8 +219,13 @@ $article->title = ‘title’;
 $article->body = ‘body’;
 $article->save();
 ```
-
-
+**Where/whereRelation**
+```
+$studentLessonProgresses = StudentLessonProgress::query()
+->where('survey_flag', '!=', true)
+->whereRelation('schedule','product_type', '!=', ScheduleProductType::BLOCK->value)
+->get();
+```
 **Model - one to many**
 ```
 # STEP 1: Add two functions as below
